@@ -1,0 +1,6 @@
+[submodule "DashboardRaspberryBackend"]
+	path = DashboardRaspberryBackend
+	url = https://github.com/IMKolganov/DashboardRaspberryBackend
+[submodule "dashboard-raspberry-react"]
+	path = dashboard-raspberry-react
+	url = https://github.com/IMKolganov/dashboard-raspberry-react
