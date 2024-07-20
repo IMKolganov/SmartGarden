@@ -4,3 +4,6 @@
 [submodule "dashboard-raspberry-react"]
 	path = dashboard-raspberry-react
 	url = https://github.com/IMKolganov/dashboard-raspberry-react
+[submodule "MSGetTemperatureAndHumidify"]
+	path = MSGetTemperatureAndHumidify
+	url = https://github.com/IMKolganov/MSGetTemperatureAndHumidify
