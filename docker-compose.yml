@@ -6,6 +6,8 @@
       - "3000:3000"
     depends_on:
       - backend
+    networks:
+      - app-network
 
   backend:
     build:
@@ -16,9 +18,17 @@
       - "3001:80"
     depends_on:
       - ms-get-temperature-and-humidify
+    networks:
+      - app-network
 
   ms-get-temperature-and-humidify:
     build:
       context: ./MSGetTemperatureAndHumidify
     ports:
       - "5000:5000"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
