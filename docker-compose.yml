@@ -1,6 +1,4 @@
-﻿version: '3.8'
-
-services:
+﻿services:
   frontend:
     build:
       context: ./dashboard-raspberry-react
@@ -8,18 +6,19 @@ services:
       - "3000:3000"
     depends_on:
       - backend
-      - frontend
 
   backend:
     build:
       context: ./DashboardRaspberryBackend
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
     ports:
-      - "3001:3001"
+      - "3001:80"
     depends_on:
-      - MSGetTemperatureAndHumidify
+      - ms-get-temperature-and-humidify
 
-  MSGetTemperatureAndHumidify:
+  ms-get-temperature-and-humidify:
     build:
       context: ./MSGetTemperatureAndHumidify
     ports:
-      - "3003:3003"
+      - "5000:5000"
