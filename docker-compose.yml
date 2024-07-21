@@ -7,7 +7,9 @@
     depends_on:
       - backend
     networks:
-      - app-network
+      app-network:
+        aliases:
+          - frontend
 
   backend:
     build:
@@ -19,7 +21,9 @@
     depends_on:
       - ms-get-temperature-and-humidify
     networks:
-      - app-network
+      app-network:
+        aliases:
+          - backend
 
   ms-get-temperature-and-humidify:
     build:
@@ -27,7 +31,9 @@
     ports:
       - "5000:5000"
     networks:
-      - app-network
+      app-network:
+        aliases:
+          - ms-get-temperature-and-humidify
 
 networks:
   app-network:
