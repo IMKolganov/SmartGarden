@@ -7,3 +7,6 @@
 [submodule "MSGetTemperatureAndHumidify"]
 	path = MSGetTemperatureAndHumidify
 	url = https://github.com/IMKolganov/MSGetTemperatureAndHumidify
+[submodule "MSGetSoilMoisture"]
+	path = MSGetSoilMoisture
+	url = https://github.com/IMKolganov/MSGetSoilMoisture

@@ -20,6 +20,7 @@
       - "3001:80"
     depends_on:
       - ms-get-temperature-and-humidify
+      - ms-get-soil-moisture
     networks:
       app-network:
         aliases:
@@ -34,6 +35,16 @@
       app-network:
         aliases:
           - ms-get-temperature-and-humidify
+
+  ms-get-soil-moisture:
+    build:
+      context: ./MSGetSoilMoisture
+    ports:
+      - "5001:5001"
+    networks:
+      app-network:
+        aliases:
+          - ms-get-soil-moisture
 
 networks:
   app-network:
