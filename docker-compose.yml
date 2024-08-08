@@ -21,6 +21,7 @@
     depends_on:
       - ms-get-temperature-and-humidify
       - ms-get-soil-moisture
+      - rabbitmq
     networks:
       app-network:
         aliases:
@@ -45,6 +46,17 @@
       app-network:
         aliases:
           - ms-get-soil-moisture
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      app-network:
+        aliases:
+          - rabbitmq
 
 networks:
   app-network:
