@@ -32,6 +32,8 @@
       context: ./MSGetTemperatureAndHumidify
     ports:
       - "5000:5000"
+    depends_on:
+      - rabbitmq
     networks:
       app-network:
         aliases:
@@ -42,6 +44,8 @@
       context: ./MSGetSoilMoisture
     ports:
       - "5001:5001"
+    depends_on:
+      - rabbitmq
     networks:
       app-network:
         aliases:
