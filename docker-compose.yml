@@ -63,7 +63,7 @@
         aliases:
           - rabbitmq
 
-  ms-video-streaming::
+  ms-video-streaming:
     build:
       context: ./MSVideoStreaming
     ports:
