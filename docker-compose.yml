@@ -6,6 +6,7 @@
       - "3000:3000"
     depends_on:
       - backend
+      - ms-video-streaming
     networks:
       app-network:
         aliases:
@@ -61,6 +62,16 @@
       app-network:
         aliases:
           - rabbitmq
+
+  ms-video-streaming::
+    build:
+      context: ./MSVideoStreaming
+    ports:
+      - "5003:5003"
+    networks:
+      app-network:
+        aliases:
+          - ms-video-streaming
 
 networks:
   app-network:
