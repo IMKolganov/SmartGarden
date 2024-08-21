@@ -13,3 +13,6 @@
 [submodule "MSVideoStreaming"]
 	path = MSVideoStreaming
 	url = https://github.com/IMKolganov/MSVideoStreaming
+[submodule "SmartGardenESP32"]
+	path = SmartGardenESP32
+	url = https://github.com/IMKolganov/SmartGardenESP32
