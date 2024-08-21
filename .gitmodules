@@ -16,3 +16,6 @@
 [submodule "SmartGardenESP32"]
 	path = SmartGardenESP32
 	url = https://github.com/IMKolganov/SmartGardenESP32
+[submodule "MSMicrocontrollerManager"]
+	path = MSMicrocontrollerManager
+	url = https://github.com/IMKolganov/MSMicrocontrollerManager
