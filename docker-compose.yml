@@ -52,6 +52,18 @@
         aliases:
           - ms-get-soil-moisture
 
+  ms-microcontroller-manager:
+    build:
+      context: ./MSMicrocontrollerManager
+    ports:
+      - "4000:4000"
+    depends_on:
+      - rabbitmq
+    networks:
+      app-network:
+        aliases:
+          - ms-microcontroller-manager
+
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rabbitmq
@@ -68,8 +80,8 @@
       context: ./MSVideoStreaming
     ports:
       - "5003:5003"
-    devices:
-      - "/dev/video0:/dev/video0"
+    # devices:
+      # - "/dev/video0:/dev/video0"
     networks:
       app-network:
         aliases:
