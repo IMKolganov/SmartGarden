@@ -62,7 +62,7 @@
     networks:
       app-network:
         aliases:
-          - ms-microcontroller-manager
+          - microcontroller_manager #todo: fix needed
 
   rabbitmq:
     image: rabbitmq:3-management
