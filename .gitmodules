@@ -19,3 +19,6 @@
 [submodule "MSMicrocontrollerManager"]
 	path = MSMicrocontrollerManager
 	url = https://github.com/IMKolganov/MSMicrocontrollerManager
+[submodule "MSPumpControl"]
+	path = MSPumpControl
+	url = https://github.com/IMKolganov/MSPumpControl
