@@ -52,6 +52,18 @@
         aliases:
           - ms-get-soil-moisture
 
+  ms-microcontroller-manager:
+    build:
+      context: ./MSMicrocontrollerManager
+    ports:
+      - "4000:4000"
+    depends_on:
+      - rabbitmq
+    networks:
+      app-network:
+        aliases:
+          - microcontroller_manager #todo: fix needed
+
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rabbitmq
