@@ -51,6 +51,30 @@
       app-network:
         aliases:
           - ms-get-soil-moisture
+  
+  ms-video-streaming:
+    build:
+      context: ./MSVideoStreaming
+    ports:
+      - "5003:5003"
+    # devices:
+      # - "/dev/video0:/dev/video0"
+    networks:
+      app-network:
+        aliases:
+          - ms-video-streaming
+  
+  ms-pump-control:
+    build:
+      context: ./MSPumpControl
+    ports:
+      - "5004:5004"
+    depends_on:
+      - rabbitmq
+    networks:
+      app-network:
+        aliases:
+          - ms-pump-control
 
   ms-microcontroller-manager:
     build:
@@ -65,30 +89,20 @@
           - microcontroller_manager #todo: fix needed
 
   rabbitmq:
-    image: rabbitmq:3-management
+    build:
+      context: ./rabbitmq
     container_name: rabbitmq
     ports:
-      - "5672:5672"
-      - "15672:15672"
+      - "5672:5672"    # AMQP port
+      - "15672:15672"  # Management UI port
+      - "1883:1883"    # MQTT port
     volumes:
-      - ./rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+      - ./rabbitmq/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
       - ./rabbitmq/logs:/var/log/rabbitmq
     networks:
       app-network:
         aliases:
           - rabbitmq
-
-  ms-video-streaming:
-    build:
-      context: ./MSVideoStreaming
-    ports:
-      - "5003:5003"
-    # devices:
-      # - "/dev/video0:/dev/video0"
-    networks:
-      app-network:
-        aliases:
-          - ms-video-streaming
 
 networks:
   app-network:
