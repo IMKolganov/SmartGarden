@@ -4,9 +4,6 @@
 [submodule "dashboard-raspberry-react"]
 	path = dashboard-raspberry-react
 	url = https://github.com/IMKolganov/dashboard-raspberry-react
-[submodule "MSGetSoilMoisture"]
-	path = MSGetSoilMoisture
-	url = https://github.com/IMKolganov/MSGetSoilMoisture
 [submodule "MSVideoStreaming"]
 	path = MSVideoStreaming
 	url = https://github.com/IMKolganov/MSVideoStreaming
