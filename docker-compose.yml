@@ -28,29 +28,18 @@
         aliases:
           - backend
 
-  ms-get-temperature-and-humidify:
+  micro-service-microcontroller-manager:
     build:
-      context: ./MSGetTemperatureAndHumidify
+      context: ./MicroServiceMicrocontrollerManager
     ports:
-      - "5000:5000"
+      - "4000:4000"
     depends_on:
       - rabbitmq
     networks:
       app-network:
         aliases:
-          - ms-get-temperature-and-humidify
+          - micro-service-microcontroller-manager
 
-  ms-get-soil-moisture:
-    build:
-      context: ./MSGetSoilMoisture
-    ports:
-      - "5001:5001"
-    depends_on:
-      - rabbitmq
-    networks:
-      app-network:
-        aliases:
-          - ms-get-soil-moisture
   
   ms-video-streaming:
     build:
@@ -63,30 +52,6 @@
       app-network:
         aliases:
           - ms-video-streaming
-  
-  ms-pump-control:
-    build:
-      context: ./MSPumpControl
-    ports:
-      - "5004:5004"
-    depends_on:
-      - rabbitmq
-    networks:
-      app-network:
-        aliases:
-          - ms-pump-control
-
-  ms-microcontroller-manager:
-    build:
-      context: ./MSMicrocontrollerManager
-    ports:
-      - "4000:4000"
-    depends_on:
-      - rabbitmq
-    networks:
-      app-network:
-        aliases:
-          - microcontroller_manager #todo: fix needed
 
   rabbitmq:
     build:
