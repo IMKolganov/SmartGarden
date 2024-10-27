@@ -20,8 +20,6 @@
     ports:
       - "3001:80"
     depends_on:
-      - ms-get-temperature-and-humidify
-      - ms-get-soil-moisture
       - rabbitmq
     networks:
       app-network:
