@@ -22,3 +22,6 @@
 [submodule "MSPumpControl"]
 	path = MSPumpControl
 	url = https://github.com/IMKolganov/MSPumpControl
+[submodule "MicroServiceMicrocontrollerManager"]
+	path = MicroServiceMicrocontrollerManager
+	url = https://github.com/IMKolganov/MicroServiceMicrocontrollerManager
