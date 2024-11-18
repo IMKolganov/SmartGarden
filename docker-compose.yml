@@ -29,6 +29,8 @@
   micro-service-microcontroller-manager:
     build:
       context: ./MicroServiceMicrocontrollerManager
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
     ports:
       - "4000:4000"
     depends_on:

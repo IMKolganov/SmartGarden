@@ -13,3 +13,6 @@
 [submodule "MicroServiceMicrocontrollerManager"]
 	path = MicroServiceMicrocontrollerManager
 	url = https://github.com/IMKolganov/MicroServiceMicrocontrollerManager
+[submodule "SharedRequests"]
+	path = SharedRequests
+	url = https://github.com/IMKolganov/SharedRequests
